@@ -1,0 +1,25 @@
+th {
+	background: blue;
+	color: white;
+}
+
+.master {
+	margin: 20px auto;
+	width: 60%;
+	
+}
+
+.menu {
+	width: 25%;
+	float: left;
+}
+
+.corpo {
+	width: 75%;
+}
+
+.erro {
+	color: #FF0000;
+	font-style: italic;
+	font-size: small;
+}
