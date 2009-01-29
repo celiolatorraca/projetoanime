@@ -2,7 +2,8 @@
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
-<%@page import="java.util.Map"%><html>
+<%@page import="java.util.Map"%>
+<%@page import="br.anime.dominio.Autor"%><html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Projeto A.N.I.M.E</title>
@@ -12,6 +13,8 @@
 
 </head>
 <body>
+
+	<% Autor autor = (Autor) request.getAttribute("autor"); %>
 
 	<div class="master" align="center">
 		<jsp:include page="template.jsp"></jsp:include>
@@ -24,34 +27,51 @@
 					</tr>
 					
 					
-					
 					<tr>
 						<td/>	
-						<td align="center"><projetoAnime:erros name="nomeErro" cssClass="erro" /></td>
+						<td align="center"><projetoAnime:erros name="nome_erro" cssClass="erro" /></td>
 					</tr>
 					<tr>
 						<td align="right">Nome completo:</td>
-						<td colspan="2"><input type="text" name="autor.nome" size="50" /></td>
+						<td colspan="2">
+							<% if (autor != null) { %>
+								<input type="text" name="autor.nome" size="50" value="<%= autor.getNome() %>"/>
+							<% } else { %>
+								<input type="text" name="autor.nome" size="50" />
+							<% } %>
+						</td>
 					</tr>
 					
 					
 					<tr>
 						<td/>
-						<td align="left"><projetoAnime:erros name="usernameErro" cssClass="erro" /></td>
+						<td align="left"><projetoAnime:erros name="username_erro" cssClass="erro" /></td>
 					</tr>
 					<tr>
 						<td align="right">Login:</td>
-						<td><input type="text" name="autor.username"/></td>
+						<td>
+							<% if (autor != null) { %>
+								<input type="text" name="autor.username" value="<%= autor.getUsername() %>"/>
+							<% } else { %>
+								<input type="text" name="autor.username" />
+							<% } %>
+						</td>
 					</tr>
 					
 					
 					<tr>
 						<td></td>	
-						<td align="left"><projetoAnime:erros name="senhaErro" cssClass="erro" /></td>
+						<td align="left"><projetoAnime:erros name="senha_erro" cssClass="erro" /></td>
 					</tr>
 					<tr>
 						<td align="right">Senha:</td>
-						<td><input type="password" name="autor.senha"/></td>
+						<td>
+							<% if (autor != null) { %>
+								<input type="password" name="autor.senha" value="<%= autor.getSenha() %>"/>
+							<% } else { %>
+								<input type="password" name="autor.senha" />
+							<% } %>
+						</td>
 					</tr>
 					<!-- 
 					<tr>

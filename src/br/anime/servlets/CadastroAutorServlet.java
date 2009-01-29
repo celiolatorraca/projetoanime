@@ -22,8 +22,11 @@ public class CadastroAutorServlet extends HttpServlet {
 		String nome = req.getParameter("autor.nome");
 		String username = req.getParameter("autor.username");
 		String senha = req.getParameter("autor.senha");
-		
+				
 		Map<String, String> erros = VerificaCampos(nome, username, senha);
+		
+		Autor autor = new Autor(nome, username, senha);
+		req.setAttribute("autor", autor);
 		
 		if (!erros.isEmpty()) {
 			req.setAttribute("erros", erros);
@@ -31,10 +34,6 @@ public class CadastroAutorServlet extends HttpServlet {
 			RequestDispatcher rd = req.getRequestDispatcher("cadastroAutor.jsp");
 			rd.forward(req, resp);
 		} else {
-			Autor autor = new Autor(nome, username, senha);
-
-			req.setAttribute("autor", autor);
-
 			RequestDispatcher rd = req.getRequestDispatcher("index.jsp");
 			rd.forward(req, resp);
 		}
@@ -50,13 +49,13 @@ public class CadastroAutorServlet extends HttpServlet {
 		Map<String, String> erros = new HashMap<String, String>();
 		
 		if (nome == null || nome.trim().length() <= 0) {
-			erros.put("nomeErro", "Preencha o seu Nome");
+			erros.put("nome_erro", "Preencha o seu Nome");
 		}
 		if (username == null || username.trim().length() <= 0) {
-			erros.put("usernameErro", "Preencha o seu Login");
+			erros.put("username_erro", "Preencha o seu Login");
 		}
 		if (senha == null || senha.trim().length() <= 0) {
-			erros.put("senhaErro", "Preencha a sua Senha");
+			erros.put("senha_erro", "Preencha a sua Senha");
 		}
 		return erros;
 	}
