@@ -4,6 +4,7 @@
 
 <%@page import="java.util.Map"%>
 <%@page import="br.anime.dominio.Autor"%><html>
+
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Projeto A.N.I.M.E</title>
@@ -28,7 +29,7 @@
 					
 					
 					<tr>
-						<td/>	
+						<td/>
 						<td align="center"><projetoAnime:erros name="nome_erro" cssClass="erro" /></td>
 					</tr>
 					<tr>
@@ -60,7 +61,7 @@
 					
 					
 					<tr>
-						<td></td>	
+						<td/>	
 						<td align="left"><projetoAnime:erros name="senha_erro" cssClass="erro" /></td>
 					</tr>
 					<tr>
@@ -73,6 +74,7 @@
 							<% } %>
 						</td>
 					</tr>
+
 					<!-- 
 					<tr>
 						<td colspan="2">

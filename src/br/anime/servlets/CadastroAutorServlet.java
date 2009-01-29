@@ -56,6 +56,11 @@ public class CadastroAutorServlet extends HttpServlet {
 		}
 		if (senha == null || senha.trim().length() <= 0) {
 			erros.put("senha_erro", "Preencha a sua Senha");
+		} else {
+			if (senha.contains(" ") || senha.contains("!") || senha.contains("@") || senha.contains("#") ||
+					senha.contains("$") || senha.contains("%") || senha.contains(".") || senha.contains(",")) {
+				erros.put("senha_erro", "Nao pode conter espaço nem <br/> caracteres: '!@#$%.,'");
+			}
 		}
 		return erros;
 	}
