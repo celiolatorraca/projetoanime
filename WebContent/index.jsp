@@ -3,6 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <%@page import="br.anime.dominio.Autor"%><html>
+
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Projeto A.N.I.M.E</title>
@@ -10,9 +11,7 @@
 </head>
 <body>
 
-	<% Autor autor = null;
-	   autor = (Autor) request.getAttribute("autor");
-	%>
+	<% Autor autor = (Autor) request.getAttribute("autor"); %>
 
 	<div class="master" align="center">
 		<jsp:include page="template.jsp" />

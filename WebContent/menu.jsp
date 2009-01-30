@@ -6,5 +6,6 @@
 	<ul>
 		<li><a href="index.jsp">Home</a></li>
 		<li><a href="cadastroAutor.jsp">Cadastro Autor</a></li>
+		<li><a href="cadastroEpisodio.jsp">Cadastrar Episódio</a></li>
 	</ul>
 </div>
